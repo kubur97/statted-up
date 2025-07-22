@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TrackerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TrackerApplication.class, args);
+		// SpringApplication.run(TrackerApplication.class, args);
+		var orderService = new OrderService(new PayPalPaymentService());
+		orderService.placeOrder(); // this will process a payment of 10.0 
 	}
 
 }
